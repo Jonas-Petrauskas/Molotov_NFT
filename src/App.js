@@ -2,6 +2,7 @@ import "./App.css";
 import MintSection from "./components/mintSection/mintSection";
 import { pageContent } from "./utils/pageContent";
 
+
 function App() {
   return (
     <div className="App">

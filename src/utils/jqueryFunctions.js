@@ -3,6 +3,7 @@ import $ from "jquery";
 export function setSwatch_1() {
   const tier_value = 0.05;
   const current_tier = 1;
+  $('.MintContainer').attr('selected_tier', 1);
   $(".TierSelector2").removeClass("active");
   $(".TierSelector3").removeClass("active");
   $(".TierSelector4").removeClass("active");
@@ -17,8 +18,8 @@ export function setSwatch_1() {
 }
 export function setSwatch_2() {
   const tier_value = 0.1;
-  const current_tier = 1;
-  // Front
+  const current_tier = 2;
+  $('.MintContainer').attr('selected_tier', 2);
   $(".TierSelector1").removeClass("active");
   $(".TierSelector3").removeClass("active");
   $(".TierSelector4").removeClass("active");
@@ -33,7 +34,8 @@ export function setSwatch_2() {
 }
 export function setSwatch_3() {
   const tier_value = 0.5;
-  const current_tier = 1;
+  const current_tier = 3;
+  $('.MintContainer').attr('selected_tier', 3);
   $(".TierSelector1").removeClass("active");
   $(".TierSelector2").removeClass("active");
   $(".TierSelector4").removeClass("active");
@@ -48,8 +50,9 @@ export function setSwatch_3() {
 }
 export function setSwatch_4() {
   const tier_value = 1;
-  const current_tier = 1;
+  const current_tier = 4;
   console.log(tier_value);
+  $('.MintContainer').attr('selected_tier', 4);
   $(".TierSelector1").removeClass("active");
   $(".TierSelector2").removeClass("active");
   $(".TierSelector3").removeClass("active");
@@ -64,7 +67,8 @@ export function setSwatch_4() {
 }
 export function setSwatch_5() {
   const tier_value = 5;
-  const current_tier = 1;
+  const current_tier = 5;
+  $('.MintContainer').attr('selected_tier', 5);
   $(".TierSelector1").removeClass("active");
   $(".TierSelector3").removeClass("active");
   $(".TierSelector4").removeClass("active");
