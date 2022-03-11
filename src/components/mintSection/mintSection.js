@@ -47,7 +47,7 @@ function MintSection({ dataObject }) {
   return (
     <div className="MintContainer">
       <div>
-        <img className="MainImage Swatch1" scr={swatch_1} alt="noImage" />
+        <img className="MainImage Swatch1" src={swatch_1} alt="noImage" />
         <img className="MainImage Swatch2" src={swatch_2} alt="noImage" />
         <img className="MainImage Swatch3" src={swatch_3} alt="noImage" />
         <img className="MainImage Swatch4" src={swatch_4} alt="noImage" />
