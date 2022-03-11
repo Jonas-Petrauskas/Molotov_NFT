@@ -3,6 +3,13 @@ import "./mintSection.css";
 import $ from "jquery";
 import Web3 from "web3";
 import ContractAbi from "../../contract/contract-abi.json";
+import {
+  setSwatch_1,
+  setSwatch_2,
+  setSwatch_3,
+  setSwatch_4,
+  setSwatch_5,
+} from "../../utils/jqueryFunctions";
 
 const contractAddress = "0xe38559f4CFc38FAeA641246572Ef154b1cEc6eaE";
 
@@ -12,8 +19,10 @@ const swatch_3 = require("../../assets/03.jpg");
 const swatch_4 = require("../../assets/04.jpg");
 const swatch_5 = require("../../assets/05.jpg");
 
-function MintSection() {
+function MintSection({ dataObject }) {
   const [minted, setMinted] = useState(false);
+
+  console.log(dataObject);
 
   const mintToken = async () => {
     const web3 = new Web3(window.ethereum);
@@ -35,127 +44,45 @@ function MintSection() {
     }
   };
 
-  let tier_value = 0.05;
-  let current_tier = 1;
-  function setSwatch_1() {
-    tier_value = 0.05;
-    current_tier = 1;
-    console.log(tier_value);
-    $(".TierSelector2").removeClass("active");
-    $(".TierSelector3").removeClass("active");
-    $(".TierSelector4").removeClass("active");
-    $(".TierSelector5").removeClass("active");
-    $(".TierSelector1").addClass("active");
-    $(".DonatePrice").text(tier_value);
-    $(".Swatch1").show();
-    $(".Swatch2").hide();
-    $(".Swatch3").hide();
-    $(".Swatch4").hide();
-    $(".Swatch5").hide();
-  }
-  function setSwatch_2() {
-    tier_value = 0.1;
-    current_tier = 1;
-    console.log(tier_value);
-    // Front
-    $(".TierSelector1").removeClass("active");
-    $(".TierSelector3").removeClass("active");
-    $(".TierSelector4").removeClass("active");
-    $(".TierSelector5").removeClass("active");
-    $(".TierSelector2").addClass("active");
-    $(".DonatePrice").text(tier_value);
-    $(".Swatch1").hide();
-    $(".Swatch3").hide();
-    $(".Swatch4").hide();
-    $(".Swatch5").hide();
-    $(".Swatch2").show();
-  }
-  function setSwatch_3() {
-    tier_value = 0.5;
-    current_tier = 1;
-    console.log(tier_value);
-    $(".TierSelector1").removeClass("active");
-    $(".TierSelector2").removeClass("active");
-    $(".TierSelector4").removeClass("active");
-    $(".TierSelector5").removeClass("active");
-    $(".TierSelector3").addClass("active");
-    $(".DonatePrice").text(tier_value);
-    $(".Swatch1").hide();
-    $(".Swatch2").hide();
-    $(".Swatch4").hide();
-    $(".Swatch5").hide();
-    $(".Swatch3").show();
-  }
-  function setSwatch_4() {
-    tier_value = 1;
-    current_tier = 1;
-    console.log(tier_value);
-    $(".TierSelector1").removeClass("active");
-    $(".TierSelector2").removeClass("active");
-    $(".TierSelector3").removeClass("active");
-    $(".TierSelector5").removeClass("active");
-    $(".TierSelector4").addClass("active");
-    $(".DonatePrice").text(tier_value);
-    $(".Swatch1").hide();
-    $(".Swatch2").hide();
-    $(".Swatch3").hide();
-    $(".Swatch5").hide();
-    $(".Swatch4").show();
-  }
-  function setSwatch_5() {
-    tier_value = 5;
-    current_tier = 1;
-    console.log(tier_value);
-    $(".TierSelector1").removeClass("active");
-    $(".TierSelector3").removeClass("active");
-    $(".TierSelector4").removeClass("active");
-    $(".TierSelector2").removeClass("active");
-    $(".TierSelector5").addClass("active");
-    $(".DonatePrice").text(tier_value);
-    $(".Swatch1").hide();
-    $(".Swatch2").hide();
-    $(".Swatch3").hide();
-    $(".Swatch4").hide();
-    $(".Swatch5").show();
-  }
-
   return (
     <div className="MintContainer">
       <div>
-        <img className="MainImage Swatch1" src={swatch_1} />
-        <img className="MainImage Swatch2" src={swatch_2} />
-        <img className="MainImage Swatch3" src={swatch_3} />
-        <img className="MainImage Swatch4" src={swatch_4} />
-        <img className="MainImage Swatch5" src={swatch_5} />
+        <img className="MainImage Swatch1" scr={swatch_1} alt="noImage" />
+        <img className="MainImage Swatch2" src={swatch_2} alt="noImage" />
+        <img className="MainImage Swatch3" src={swatch_3} alt="noImage" />
+        <img className="MainImage Swatch4" src={swatch_4} alt="noImage" />
+        <img className="MainImage Swatch5" src={swatch_5} alt="noImage" />
       </div>
       <div>
-        <p className="ChooseTierText">Choose the NFT Tier</p>
+        <p className="ChooseTierText">{dataObject.chooseTier}</p>
         <div className="SwatchContainer">
           <button
             onClick={setSwatch_1}
             className="TierSwatch active TierSelector1"
           >
-            <img src={swatch_1} />
+            <img src={swatch_1} alt="noImage" />
           </button>
           <button onClick={setSwatch_2} className="TierSwatch TierSelector2">
-            <img src={swatch_2} />
+            <img src={swatch_2} alt="noImage" />
           </button>
           <button onClick={setSwatch_3} className="TierSwatch TierSelector3">
-            <img src={swatch_3} />
+            <img src={swatch_3} alt="noImage" />
           </button>
           <button onClick={setSwatch_4} className="TierSwatch TierSelector4">
-            <img src={swatch_4} />
+            <img src={swatch_4} alt="noImage" />
           </button>
           <button onClick={setSwatch_5} className="TierSwatch TierSelector5">
-            <img src={swatch_5} />
+            <img src={swatch_5} alt="noImage" />
           </button>
         </div>
         {!minted ? (
           <button onClick={() => mintToken()} className="MintButton">
-            Mint for <span className="DonatePrice">0.05</span>ETH
+            {dataObject.mintText}{" "}
+            <span className="DonatePrice">{dataObject.priceDefault}</span>
+            {dataObject.eth}
           </button>
         ) : (
-          <p>Token minted succesfully</p>
+          <p>{dataObject.afterMintText}</p>
         )}
       </div>
     </div>

@@ -13,7 +13,7 @@ function App() {
                 <h1 className="MintTitle">{dataObject.pageTitle}</h1>
                 <p className="MintParagraph">{dataObject.pageParagraph}</p>
               </div>
-              <MintSection />
+              <MintSection dataObject={dataObject} />
             </div>
           </div>
         );
