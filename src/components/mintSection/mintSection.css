@@ -1,0 +1,96 @@
+@media only screen and (max-width: 900px) {
+  .MintContainer {
+    flex-wrap: Wrap;
+  }
+  .MintContainer > div {
+    width: 100% !important;
+  }
+  .MainImage {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+}
+
+.MintContainer {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  min-height: 150px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  display: flex;
+}
+.MintContainer > div:nth-child(1) {
+  width: 60%;
+  position: relative;
+}
+.MintContainer > div:nth-child(2) {
+  width: 100%;
+}
+.Swatch2,
+.Swatch3,
+.Swatch4,
+.Swatch5 {
+  display: none;
+}
+
+.MainImage {
+  max-width: 200px;
+  position: absolute;
+  left: 25px;
+  top: -25px;
+  border-radius: 50%;
+}
+
+.ChooseTierText {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  width: 90%;
+  margin-left: auto;
+}
+
+.SwatchContainer {
+  width: 90%;
+  margin-left: auto;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.TierSwatch {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.TierSwatch.active {
+  opacity: 1;
+  border: 2px solid #edb607;
+}
+.TierSwatch img {
+  max-width: 40px;
+  width: 100%;
+  border-radius: 50%;
+  display: flex;
+}
+
+.MintButton {
+  width: 80%;
+  height: 40px;
+  color: white;
+  background-color: #edb607;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.MintButton:hover {
+  background-color: #ed9507;
+}

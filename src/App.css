@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+img {
+  max-height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media only screen and (min-width: 900px) {
+.OuterPageContainer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background-image: url('./assets/blurred-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+}
+@media only screen and (max-width: 900px) {
+  .OuterPageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background-image: url('./assets/mobile-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  }
+.InnerPageContainer{
+  position: absolute;
+}
+.MintTitle {
   color: white;
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+.MintParagraph{
+  color: white;
+  max-width: 550px;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+}
+.InnerPageContainer__text{
+  margin-bottom: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+.InnerPageContainer {
+  max-width: 550px;
+  width: 100%;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
