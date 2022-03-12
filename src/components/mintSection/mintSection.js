@@ -19,22 +19,13 @@ const swatch_3 = require("../../assets/02.jpg");
 const swatch_4 = require("../../assets/04.jpg");
 const swatch_5 = require("../../assets/05.jpg");
 
-// $('.TierSwatch').click(function(){
-//   let selected_tier = $(this).attr('current_tier');
-//   $('.MintContainer').attr('selected_tier', selected_tier);
-//  console.log(selected_tier);
-// });
-
 function MintSection({ dataObject }) {
   const [minted, setMinted] = useState(false);
-
-  console.log(dataObject);
 
   const mintToken = async () => {
     const web3 = new Web3(window.ethereum);
     const contract = new web3.eth.Contract(ContractAbi, contractAddress);
     const tier = $(".MintContainer").attr("selected_tier");
-    console.log(tier);
 
     if (window.ethereum && tier == 1) {
       try {
@@ -47,7 +38,7 @@ function MintSection({ dataObject }) {
         });
         return result;
       } catch (err) {
-        return console.err(err);
+        return console.error(err);
       }
     } else if (window.ethereum && tier == 2) {
       try {
@@ -60,7 +51,7 @@ function MintSection({ dataObject }) {
         });
         return result;
       } catch (err) {
-        return console.err(err);
+        return console.error(err);
       }
     } else if (window.ethereum && tier == 3) {
       try {
@@ -73,7 +64,7 @@ function MintSection({ dataObject }) {
         });
         return result;
       } catch (err) {
-        return console.err(err);
+        return console.error(err);
       }
     } else if (window.ethereum && tier == 4) {
       try {
@@ -86,7 +77,7 @@ function MintSection({ dataObject }) {
         });
         return result;
       } catch (err) {
-        return console.err(err);
+        return console.error(err);
       }
     } else if (window.ethereum && tier == 5) {
       try {
@@ -99,7 +90,7 @@ function MintSection({ dataObject }) {
         });
         return result;
       } catch (err) {
-        return console.err(err);
+        return console.error(err);
       }
     }
   };
