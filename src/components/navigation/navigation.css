@@ -27,6 +27,7 @@
 }
 .NavigationCell a:hover {
   opacity: 1;
+  color: #eda520;
 }
 @media only screen and (max-width: 900px) {
   .dekstop-only {
