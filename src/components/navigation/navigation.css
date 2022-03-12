@@ -1,0 +1,40 @@
+.Navigation {
+  display: flex;
+  justify-content: center;
+}
+.Navigation.dekstop-only {
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.Navigation.mobile-only {
+  margin-top: 80px;
+  flex-wrap: Wrap;
+}
+.NavigationCell {
+  width: 100%;
+  padding: 10px 5px;
+  text-align: center;
+}
+.NavigationCell a {
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
+  transition: all 0.5s;
+  font-size: 18px;
+}
+.mobile-only .NavigationCell a {
+  font-size: 22px;
+}
+.NavigationCell a:hover {
+  opacity: 1;
+}
+@media only screen and (max-width: 900px) {
+  .dekstop-only {
+    display: none;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .mobile-only {
+    display: none;
+  }
+}

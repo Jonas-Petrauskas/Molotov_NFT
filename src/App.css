@@ -2,32 +2,32 @@ img {
   max-height: 100vh;
 }
 @media only screen and (min-width: 900px) {
-.OuterPageContainer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  background-image: url('./assets/blurred-bg.jpg');
-  background-size: cover;
-  background-position: center;
-}
-}
-@media only screen and (max-width: 900px) {
-  .OuterPageContainer{
+  .OuterPageContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
     height: 100vh;
-    background-image: url('./assets/mobile-bg.jpg');
+    background-image: url("./assets/blurred-bg.jpg");
     background-size: cover;
     background-position: center;
   }
+}
+@media only screen and (max-width: 900px) {
+  .OuterPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 170vh;
+    background-image: url("./assets/mobile-bg.jpg");
+    background-size: cover;
+    background-position: center;
   }
-.InnerPageContainer{
+}
+.InnerPageContainer {
   position: absolute;
 }
 .MintTitle {
@@ -36,14 +36,14 @@ img {
   font-size: 3.5rem;
   margin-bottom: 15px;
 }
-.MintParagraph{
+.MintParagraph {
   color: white;
   max-width: 550px;
   margin: auto;
   text-align: center;
   font-size: 16px;
 }
-.InnerPageContainer__text{
+.InnerPageContainer__text {
   margin-bottom: 100px;
 }
 
@@ -51,6 +51,5 @@ img {
   max-width: 550px;
   width: 100%;
   margin: auto;
+  height: 100%;
 }
-
-

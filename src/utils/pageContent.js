@@ -8,5 +8,13 @@ export const pageContent = [
     chooseTier: "Choose the NFT Tier",
     eth: "ETH",
     afterMintText: "Token minted successfully",
+    navigation_1: "Homepage",
+    navigation_2: "Story",
+    navigation_3: "How It Works",
+    navigation_4: "FAQ",
+    navigation_1_link: "https://molotovnft.org/",
+    navigation_2_link: "https://molotovnft.org/#story",
+    navigation_3_link: "https://molotovnft.org/#how-it-works",
+    navigation_4_link: "https://molotovnft.org/#faq",
   },
 ];
