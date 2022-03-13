@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
+import { connectWallet } from "../../utils/interact";
+import "./connectWallet.css";
 
-function ConnectWallet() {
+function ConnectWallet({ dataObject }) {
   return (
-    <div>
+    <div className="button-container">
       <Link to="/mint">
-        <button>Connect</button>
+        <button className="connect-button" onClick={connectWallet}>
+          {dataObject.connectButton}
+        </button>
       </Link>
     </div>
   );

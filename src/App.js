@@ -20,7 +20,10 @@ function App() {
               </div>
               <Router>
                 <Routes>
-                  <Route path="/" element={<ConnectWallet />} />
+                  <Route
+                    path="/"
+                    element={<ConnectWallet dataObject={dataObject} />}
+                  />
                   <Route
                     path="/mint"
                     element={<MintSection dataObject={dataObject} />}
