@@ -16,5 +16,6 @@ export const pageContent = [
     navigation_2_link: "https://molotovnft.org/#story",
     navigation_3_link: "https://molotovnft.org/#how-it-works",
     navigation_4_link: "https://molotovnft.org/#faq",
+    connectButton: "Connect a wallet",
   },
 ];
