@@ -53,3 +53,17 @@ img {
   margin: auto;
   height: 100%;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.connect-button {
+  height: 40px;
+  width: 200px;
+  font-size: 1rem;
+  background: linear-gradient(#edb607, #ed9507);
+  color: white;
+  border: none;
+}
