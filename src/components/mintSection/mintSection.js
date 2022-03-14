@@ -26,6 +26,7 @@ function MintSection({ dataObject }) {
     const web3 = new Web3(window.ethereum);
     const contract = new web3.eth.Contract(ContractAbi, contractAddress);
     const tier = $(".MintContainer").attr("selected_tier");
+    console.log(tier);
 
     if (window.ethereum && tier == 1) {
       try {
