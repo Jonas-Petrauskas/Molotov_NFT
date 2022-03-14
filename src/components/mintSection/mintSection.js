@@ -11,7 +11,7 @@ import {
   setSwatch_5,
 } from "../../utils/jqueryFunctions";
 
-const contractAddress = "0xe38559f4CFc38FAeA641246572Ef154b1cEc6eaE";
+const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
 
 const swatch_1 = require("../../assets/03.jpg");
 const swatch_2 = require("../../assets/01.jpg");
