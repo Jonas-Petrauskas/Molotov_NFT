@@ -66,14 +66,6 @@ function App() {
                 <MintSection dataObject={dataObject} />
               ) : (
                 <Connected />
-                // <div className="button-container">
-                //   <button
-                //     className="connect-button"
-                //     onClick={connectWalletPressed}
-                //   >
-                //     {dataObject.connectButton}
-                //   </button>
-                // </div>
               )}
               <NavigationMobile dataObject={dataObject} />
             </div>
