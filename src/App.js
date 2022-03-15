@@ -19,6 +19,32 @@ function App() {
     getCurrentWallet();
   }, []);
 
+  const isMobileDevice = () => {
+    return "ontouchstart" in window || "onmsgesturechange" in window;
+  };
+
+  const Connected = () => {
+    if (isMobileDevice()) {
+      const dappUrl = "molotov-nft.herokuapp.com/";
+      const metamaskAppDeepLink = "https://metamask.app.link/dapp/" + dappUrl;
+      return (
+        <div className="button-container">
+          <a href={metamaskAppDeepLink}>
+            <button className="connect-button">Connect a wallet</button>
+          </a>
+        </div>
+      );
+    }
+
+    return (
+      <div className="button-container">
+        <button className="connect-button" onClick={connectWalletPressed}>
+          Connect a wallet
+        </button>
+      </div>
+    );
+  };
+
   const connectWalletPressed = async () => {
     const walletResponse = await connectWallet();
     setStatus(walletResponse.status);
@@ -39,14 +65,15 @@ function App() {
               {walletAddress.length > 0 ? (
                 <MintSection dataObject={dataObject} />
               ) : (
-                <div className="button-container">
-                  <button
-                    className="connect-button"
-                    onClick={connectWalletPressed}
-                  >
-                    {dataObject.connectButton}
-                  </button>
-                </div>
+                <Connected />
+                // <div className="button-container">
+                //   <button
+                //     className="connect-button"
+                //     onClick={connectWalletPressed}
+                //   >
+                //     {dataObject.connectButton}
+                //   </button>
+                // </div>
               )}
               <NavigationMobile dataObject={dataObject} />
             </div>
